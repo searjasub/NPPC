@@ -1,27 +1,47 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-import App2 from "./App2";
+import Ranking from "./Ranking";
+import Information from "./Information";
+import {Route, Switch} from "react-router-dom";
+import Header from "./Header";
+import Home from "./Home";
+import ErrorPage from "./ErrorPage";
+import Login from "./Login";
+import Footer from "./Footer"
 
 class App extends Component {
 
-  constructor(props, context) {
-    super(props, context);
+    constructor(props, context) {
+        super(props, context);
 
-    this.state = {
-      'count': 0,
-      'more': 'variable'
-    };
-  }
+        this.state = {
+            'count': 0,
+            'more': 'variable'
+        };
 
+        this.addToCount = this.addToCount.bind(this);
+        console.log(this.state);
+    }
 
-  render() {
-    return (
-      <div className="App">
-       <App2 count={this.state.count}/>
-      </div>
-    );
-  }
+    addToCount() {
+        this.setState({'count': this.state.count + 1});
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Header/>
+                <Switch>
+                    <Route path="/Information" component={Information}/>
+                    <Route path="/Ranking" exact component={Ranking}/>
+                    <Route path="/login" exact component={Login}/>
+                    <Route path="/" exact component={Home}/>
+                    <Route path="/Error" component={ErrorPage}/>
+                </Switch>
+                <Footer/>
+            </div>
+        );
+    }
 }
 
 export default App;
