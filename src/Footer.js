@@ -7,9 +7,9 @@ class Footer extends Component {
     render() {
         return (
             <>
-                <MDBFooter color="mdb-color" className="font-small pt-4 mt-3">
+                <MDBFooter color="mdb-color" className="font-small pt-1">
                     <MDBContainer className="text-center text-md">
-                        <MDBRow className="text-center text-md-left mt-3 pb-3">
+                        <MDBRow className="text-center text-md mt-3 pb-3">
                             <MDBCol lg="4" className="mx-auto mt-3">
                                 <h6 className="text-uppercase mb-4 font-weight-bold">
                                     Neumont Ping Pong Club
@@ -20,11 +20,11 @@ class Footer extends Component {
                             </MDBCol>
 
                             <MDBCol md="2" lg="1" className="mx-auto mt-3">
-                                <div className="text-left text-md-right">
+
                                     <a className="btn-floating btn-lg rgba-white-slight">
                                         <i className="fab fa-discord" onClick="https://discord.gg/6GNDy2r" />
                                     </a>
-                                </div>
+
                             </MDBCol>
 
                             <MDBCol md="4" lg="2" xl="3" className="mx-auto mt-3">
