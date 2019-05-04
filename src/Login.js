@@ -9,9 +9,9 @@ class Login extends Component {
         return (
             <>
                 <br/><br/><br/><br/>
-                <MDBContainer className="text-center" md-10>
-                    <MDBRow>
-                        <MDBCol md="10">
+                <MDBContainer >
+                    <MDBRow className="w-responsive mx-auto p-3 mt-2">
+                        <MDBCol>
                             <MDBCard >
                                 <div className=" pt-3 grey lighten-2">
                                     <MDBRow className="d-flex justify-content-start">

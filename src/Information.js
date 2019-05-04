@@ -13,7 +13,7 @@ class Information extends Component {
     render() {
         return (
             <>
-                Information
+                <br/>
             </>
         );
     }

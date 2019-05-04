@@ -9,7 +9,7 @@ class Ranking extends Component {
             <>
                 <br/><br/><br/><br/>
                 <MDBContainer>
-                    <MDBListGroup style={{width: "35rem"}}>
+                    <MDBListGroup className="w-responsive mx-auto p-3 mt-2">
                         <MDBListGroupItem active className="d-flex justify-content-between align-items-center">
                             Name
                             <MDBBadge
@@ -21,25 +21,25 @@ class Ranking extends Component {
                             Searjasub Lopez
                             <MDBBadge
                                 color="primary" pill>
-                                2
+                                3
                             </MDBBadge>
                         </MDBListGroupItem>
                         <MDBListGroupItem className="d-flex justify-content-between align-items-center">
-                            Kaegan Fontenont
+                            Kagen Fontenot
                             <MDBBadge color="primary"
-                                      pill>1
+                                      pill>2
                             </MDBBadge>
                         </MDBListGroupItem>
                         <MDBListGroupItem className="d-flex justify-content-between align-items-center">
                             Felix Martinez
                             <MDBBadge color="primary"
-                                      pill>1
+                                      pill>2
                             </MDBBadge>
                         </MDBListGroupItem>
                         <MDBListGroupItem className="d-flex justify-content-between align-items-center">
                             Jeff Rehm
                             <MDBBadge color="primary"
-                                      pill>0
+                                      pill>1
                             </MDBBadge>
                         </MDBListGroupItem>
 

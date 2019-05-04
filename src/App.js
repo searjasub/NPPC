@@ -8,12 +8,12 @@ import Home from "./Home";
 import ErrorPage from "./ErrorPage";
 import Login from "./Login";
 import Footer from "./Footer"
+import Members from "./Members";
 
 class App extends Component {
 
     constructor(props, context) {
         super(props, context);
-
         this.state = {
             'count': 0,
             'more': 'variable'
@@ -35,6 +35,7 @@ class App extends Component {
                     <Route path="/Information" component={Information}/>
                     <Route path="/Ranking" exact component={Ranking}/>
                     <Route path="/login" exact component={Login}/>
+                    <Route path="/Members" exact component={Members}/>
                     <Route path="/" exact component={Home}/>
                     <Route path="/Error" component={ErrorPage}/>
                 </Switch>

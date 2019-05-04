@@ -18,12 +18,14 @@ class Footer extends Component {
                                     If you have any question you can reach us in Discord.
                                 </p>
                             </MDBCol>
-
                             <MDBCol md="2" lg="1" className="mx-auto mt-3">
 
-                                    <a className="btn-floating btn-lg rgba-white-slight">
-                                        <i className="fab fa-discord" onClick="https://discord.gg/6GNDy2r" />
-                                    </a>
+                                <a className="btn-floating btn-lg rgba-white-slight fab fa-discord">
+                                </a>
+                                {/*<React component={() => {*/}
+                                {/*    window.location = "https://discord.gg/6GNDy2r"; return null;*/}
+                                {/*}}/>*/}
+
 
                             </MDBCol>
 

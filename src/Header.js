@@ -9,7 +9,6 @@ import {
 
 class Header extends Component {
 
-
     state = {
         isOpen: false
     };
@@ -37,8 +36,12 @@ class Header extends Component {
                             <MDBNavLink to="./Ranking">Ranking</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem center>
+                            <MDBNavLink to="./Members">Members</MDBNavLink>
+                        </MDBNavItem>
+                        <MDBNavItem center>
                             <MDBBtn href="./Login" size="sm" >Login</MDBBtn>
                         </MDBNavItem>
+
                     </MDBNavbarNav>
                 </MDBCollapse>
             </MDBNavbar>

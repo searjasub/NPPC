@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
-import './index.css'
 import './App.css';
 
-class Home extends Component {
+class Members extends Component {
 
     render() {
         return (
             <>
-                <div className="bg"/>
-
+                Members
             </>
         );
     }
 }
 
-export default Home;
+export default Members;
