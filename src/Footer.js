@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
-import {MDBCol, MDBContainer, MDBFooter, MDBRow} from "mdbreact";
+import {MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow} from "mdbreact";
 
 class Footer extends Component {
 
     render() {
         return (
             <>
-                <MDBFooter color="mdb-color" className="font-small pt-1">
+                <MDBFooter color="mdb-color" className="font-small pt-1 page-footer">
                     <MDBContainer className="text-center text-md">
                         <MDBRow className="text-center text-md mt-3 pb-3">
                             <MDBCol lg="4" className="mx-auto mt-3">
@@ -19,27 +19,20 @@ class Footer extends Component {
                                 </p>
                             </MDBCol>
                             <MDBCol md="2" lg="1" className="mx-auto mt-3">
-
-                                <a className="btn-floating btn-lg rgba-white-slight fab fa-discord">
+                                <a href="https://discord.gg/6GNDy2r" target="_blank">
+                                    <MDBIcon fab icon="discord" md="8"/>
                                 </a>
-                                {/*<React component={() => {*/}
-                                {/*    window.location = "https://discord.gg/6GNDy2r"; return null;*/}
-                                {/*}}/>*/}
-
-
                             </MDBCol>
 
-                            <MDBCol md="4" lg="2" xl="3" className="mx-auto mt-3">
-                                <p>
-                                    <i className="fa fa-home mr-3"/><br/>147 S Main Street, Salt Lake City, UT
-                                </p>
+                            <MDBCol className="mx-auto mt-3">
+                                <p>147 S Main Street, Salt Lake City, UT</p>
                             </MDBCol>
                         </MDBRow>
                         <hr/>
                         <MDBRow className="d-flex align-items-center">
-                            <MDBCol md="8" lg="8">
-                                <p className="text-center text-md-left grey-text">
-                                    &copy; {new Date().getFullYear()} Copyright: Searjasub Lopez
+                            <MDBCol>
+                                <p className="text-center grey-text">
+                                    &copy; {new Date().toDateString()} Copyright: Searjasub Lopez
                                 </p>
                             </MDBCol>
                         </MDBRow>

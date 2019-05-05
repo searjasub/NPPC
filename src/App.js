@@ -39,7 +39,7 @@ class App extends Component {
                     <Route path="/" exact component={Home}/>
                     <Route path="/Error" component={ErrorPage}/>
                 </Switch>
-                <Footer/>
+                <Footer classname="page-footer"/>
             </div>
         );
     }
