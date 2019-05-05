@@ -3,4 +3,4 @@ module.exports = {
       srcPath: './src',
       outputPath: './public'
     }
-  };
+};
