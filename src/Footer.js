@@ -7,28 +7,26 @@ class Footer extends Component {
     render() {
         return (
             <>
-                <MDBFooter color="mdb-color" className="font-small pt-1 page-footer">
-                    <MDBContainer className="text-center text-md">
-                        <MDBRow className="text-center text-md mt-3 pb-3">
-                            <MDBCol lg="4" className="mx-auto mt-3">
-                                <h6 className="text-uppercase mb-4 font-weight-bold">
+                <MDBFooter color="" className="font-small pt-1 page-footer text-dark">
+                    <MDBContainer className="text-center text-md ">
+                        <hr className="mb-3"/>
+                        <MDBRow className="text-center text-md">
+                            <MDBCol lg="4" className="mx-auto mb-2">
+                                <h6 className="text-uppercase font-weight-bold">
                                     Neumont Ping Pong Club
                                 </h6>
-                                <p>
-                                    If you have any question you can reach us in Discord.
-                                </p>
                             </MDBCol>
-                            <MDBCol md="2" lg="1" className="mx-auto mt-3">
-                                <a href="https://discord.gg/6GNDy2r" target="_blank">
-                                    <MDBIcon fab icon="discord" md="8"/>
-                                </a>
-                            </MDBCol>
+                            {/*<MDBCol md="2" lg="1" className="mx-auto mt-3">*/}
+                            {/*    <a href="https://discord.gg/6GNDy2r" target="_blank">*/}
+                            {/*        <MDBIcon fab icon="discord" md="8"/>*/}
+                            {/*    </a>*/}
+                            {/*</MDBCol>*/}
 
-                            <MDBCol className="mx-auto mt-3">
+                            <MDBCol className="mx-auto">
                                 <p>147 S Main Street, Salt Lake City, UT</p>
                             </MDBCol>
                         </MDBRow>
-                        <hr/>
+
                         <MDBRow className="d-flex align-items-center">
                             <MDBCol>
                                 <p className="text-center grey-text">

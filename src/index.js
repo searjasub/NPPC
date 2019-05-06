@@ -9,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from "react-router-dom";
 
 ReactDOM.render(
-    <Router>
+    <Router className="bg-primary">
         <App/>
     </Router>
     , document.getElementById('root'));
