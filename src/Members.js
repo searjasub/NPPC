@@ -13,29 +13,28 @@ class Members extends Component {
         this.setState({[cardId]: !this.state[cardId]});
     };
 
+
+    // <img src="https://i.ibb.co/yPTd66V/bscs1.jpg" alt="bscs" style={{height: "130px"}}/>
+    // <img src="https://i.ibb.co/pbKrjSg/bstm.jpg" alt="bstm" style={{height: "130px"}}/>
+    // <img src="https://i.ibb.co/BwYQ8DX/bsgd.jpg" alt="bsgd"/>
     render() {
         return (
             <>
                 <br/><br/><br/>
-                <div className="container">
+                <div className="container-fluid">
                     <MDBRow>
                         <MDBCol>
                             {/*SEARJASUB LOPEZ*/}
                             <MDBContainer >
                                 <MDBCol style={{minHeight: '26rem', maxWidth: "22rem"}}>
-                                    <MDBContainer className="text-center m-4">
-                                        <MDBCard className="" style={{height: "560px"}}>
-                                            <img src="https://i.ibb.co/CQy9Hkg/bscs1.jpg" alt="bscs" style={{height: "130px"}}/>
+                                    <MDBContainer className="text-center">
+                                        <MDBCard className="" style={{height: "400px"}}>
+                                            <img src="https://i.ibb.co/yPTd66V/bscs1.jpg" alt="bscs" style={{height: "130px"}}/>
                                             <MDBCardBody>
                                                 <img src="https://mdbootstrap.com/img/Photos/Others/photo5.jpg" alt=""
                                                      className="rounded-circle" style={{height: "100px", width: "100px"}}/>
                                                 <h4 className="font-weight-bold mb-3">Searjasub Lopez</h4>
                                                 <h5 className="font-weight-bold text-primary">President</h5>
-                                                <hr/>
-                                                <p>
-                                                    From Santiago, Chile. 24 years living in earth. Married almost 3 years ago.
-                                                    Father of little Sear (19 Months) and baby Kai (2 Weeks)
-                                                </p>
                                                 <hr/>
                                                 <ul className="list-inline py-2">
                                                     <li className="list-inline-item">
@@ -60,25 +59,16 @@ class Members extends Component {
                             {/*JEFFREY REHM*/}
                             <MDBContainer >
                                 <MDBCol style={{minHeight: '26rem', maxWidth: "22rem"}}>
-                                    <MDBContainer className="text-center m-4">
-                                        <MDBCard className="" style={{height: "560px"}}>
-                                            <img src="https://i.ibb.co/z6YJgNz/bswd.jpg" alt="bscs" style={{height: "130px"}}/>
+                                    <MDBContainer className="text-center">
+                                        <MDBCard className="" style={{height: "400px"}}>
+                                            <img src="https://i.ibb.co/z6YJgNz/bswd.jpg" alt="bswd" style={{height: "130px"}}/>
                                             <MDBCardBody>
                                                 <img src="https://mdbootstrap.com/img/Photos/Others/photo5.jpg" alt=""
                                                      className="rounded-circle" style={{height: "100px", width: "100px"}}/>
                                                 <h4 className="font-weight-bold mb-3">Jeffrey Rehm</h4>
                                                 <h5 className="font-weight-bold text-success">Member</h5>
                                                 <hr/>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat tenetur odio suscipit non commodi vel eius veniam maxime?
-                                                </p>
-                                                <hr/>
                                                 <ul className="list-inline py-2">
-                                                    <li className="list-inline-item">
-                                                        <a href="#!" className="p-2 fa-lg fb-ic">
-                                                            <MDBIcon fab icon="facebook-f"/>
-                                                        </a>
-                                                    </li>
                                                     <li className="list-inline-item">
                                                         <a href="" className="p-2 fa-lg li-ic"
                                                            target="_blank">
@@ -96,23 +86,19 @@ class Members extends Component {
                         {/*FELIX MARTINEZ*/}
                             <MDBContainer >
                                 <MDBCol style={{minHeight: '26rem', maxWidth: "22rem"}}>
-                                    <MDBContainer className="text-center m-4">
-                                        <MDBCard className="" style={{height: "560px"}}>
-                                            <img src="https://i.ibb.co/Vp2gV4G/bsis.jpg" alt="bscs" style={{height: "130px"}}/>
+                                    <MDBContainer className="text-center">
+                                        <MDBCard className="" style={{height: "400px"}}>
+                                            <img src="https://i.ibb.co/HY9Pyj7/bsis.jpg" alt="bsis" style={{height: "130px"}}/>
                                             <MDBCardBody>
                                                 <img src="https://mdbootstrap.com/img/Photos/Others/photo5.jpg" alt=""
                                                      className="rounded-circle" style={{height: "100px", width: "100px"}}/>
                                                 <h4 className="font-weight-bold mb-3">Felix Martinez</h4>
                                                 <h5 className="font-weight-bold text-success">Member</h5>
                                                 <hr/>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat tenetur odio suscipit non commodi vel eius veniam maxime?
-                                                </p>
-                                                <hr/>
                                                 <ul className="list-inline py-2">
                                                     <li className="list-inline-item">
                                                         <a href="#!" className="p-2 fa-lg fb-ic">
-                                                            <MDBIcon fab icon="facebook-f"/>
+                                                            <MDBIcon fab icon="twitch"/>
                                                         </a>
                                                     </li>
                                                     <li className="list-inline-item">
