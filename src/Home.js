@@ -8,9 +8,7 @@ class Home extends Component {
         return (
             <>
                 <div className="bg"/>
-                <br/><br/><br/><br/><br/>
                 <div id="calendar"/>
-                <br/><br/><br/><br/><br/>
             </>
         );
     }

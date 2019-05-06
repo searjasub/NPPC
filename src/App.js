@@ -31,14 +31,16 @@ class App extends Component {
         return (
             <div className="App">
                 <Header/>
-                <Switch>
-                    <Route path="/Information" component={Information}/>
-                    <Route path="/Ranking" exact component={Ranking}/>
-                    <Route path="/login" exact component={Login}/>
-                    <Route path="/Members" exact component={Members}/>
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/Error" component={ErrorPage}/>
-                </Switch>
+                <div className="extendFooter">
+                    <Switch>
+                        <Route path="/Information" component={Information}/>
+                        <Route path="/Ranking" exact component={Ranking}/>
+                        <Route path="/login" exact component={Login}/>
+                        <Route path="/Members" exact component={Members}/>
+                        <Route path="/" exact component={Home}/>
+                        <Route path="/Error" component={ErrorPage}/>
+                    </Switch>
+                </div>
                 <Footer classname="page-footer"/>
             </div>
         );

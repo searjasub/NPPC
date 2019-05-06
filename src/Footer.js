@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow} from "mdbreact";
+import {MDBCol, MDBContainer, MDBFooter, MDBRow} from "mdbreact";
 
 class Footer extends Component {
 
@@ -8,32 +8,29 @@ class Footer extends Component {
         return (
             <>
                 <MDBFooter color="" className="font-small pt-1 page-footer text-dark">
-                    <MDBContainer className="text-center text-md ">
-                        <hr className="mb-3"/>
-                        <MDBRow className="text-center text-md">
-                            <MDBCol lg="4" className="mx-auto mb-2">
+                    <hr className="mb-1"/>
+                    <MDBContainer className="text-center text-md d-flex justify-content-between">
+                        <MDBCol className=" text-md">
+                            <MDBRow lg="4" className="mb-0">
                                 <h6 className="text-uppercase font-weight-bold">
                                     Neumont Ping Pong Club
                                 </h6>
-                            </MDBCol>
+                            </MDBRow>
+                            <MDBRow>
+                                <p>147 S Main Street, Salt Lake City, UT</p>
+                            </MDBRow>
                             {/*<MDBCol md="2" lg="1" className="mx-auto mt-3">*/}
                             {/*    <a href="https://discord.gg/6GNDy2r" target="_blank">*/}
                             {/*        <MDBIcon fab icon="discord" md="8"/>*/}
                             {/*    </a>*/}
                             {/*</MDBCol>*/}
+                        </MDBCol>
 
-                            <MDBCol className="mx-auto">
-                                <p>147 S Main Street, Salt Lake City, UT</p>
-                            </MDBCol>
-                        </MDBRow>
-
-                        <MDBRow className="d-flex align-items-center">
-                            <MDBCol>
-                                <p className="text-center grey-text">
-                                    &copy; {new Date().toDateString()} Copyright: Searjasub Lopez
-                                </p>
-                            </MDBCol>
-                        </MDBRow>
+                        <MDBCol className="d-flex align-items-center">
+                            <p className="text-center grey-text">
+                                &copy; {new Date().toDateString()} Copyright: Searjasub Lopez
+                            </p>
+                        </MDBCol>
                     </MDBContainer>
                 </MDBFooter>
             </>
