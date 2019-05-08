@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdbreact';
+import {withFirebase} from "./components/Firebase";
 
 
 class Login extends Component {
@@ -67,4 +68,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withFirebase(Login);

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../App.css';
 import Ranking from "./Ranking";
 import Information from "./Information";
 import {Route, Switch} from "react-router-dom";
