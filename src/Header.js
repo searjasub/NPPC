@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
-import {MDBBtn} from "mdbreact";
-
 import {
-    MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
-    MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon
+    MDBBtn,
+    MDBCollapse,
+    MDBNavbar,
+    MDBNavbarBrand,
+    MDBNavbarNav,
+    MDBNavbarToggler,
+    MDBNavItem,
+    MDBNavLink
 } from "mdbreact";
 
 class Header extends Component {
@@ -14,18 +18,21 @@ class Header extends Component {
     };
 
     toggleCollapse = () => {
-        this.setState({ isOpen: !this.state.isOpen });
+        this.setState({isOpen: !this.state.isOpen});
     };
 
     render() {
         return (
             <MDBNavbar color="indigo" dark expand="md">
                 <MDBNavbarBrand>
-                    <strong className="white-text">Neumont Ping Pong Club   </strong>
+                    <strong className="white-text">Neumont Ping Pong Club </strong>
                 </MDBNavbarBrand>
-                <MDBNavbarToggler onClick={this.toggleCollapse} />
+                <MDBNavbarToggler onClick={this.toggleCollapse}/>
                 <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
                     <MDBNavbarNav right center>
+                        <MDBNavItem center>
+                            <MDBBtn href="./Signup" size="sm">Tournament Sign Up</MDBBtn>
+                        </MDBNavItem>
                         <MDBNavItem center>
                             <MDBNavLink to="./">Home</MDBNavLink>
                         </MDBNavItem>
@@ -33,13 +40,16 @@ class Header extends Component {
                             <MDBNavLink to="./Information">Information</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem center>
-                            <MDBNavLink to="./Ranking">Ranking</MDBNavLink>
+                            <MDBNavbarNav>
+                                <MDBNavLink to="./Ranking">Ranking</MDBNavLink>
+                                <MDBNavLink to="./Ranking">Ranking</MDBNavLink>
+                            </MDBNavbarNav>
                         </MDBNavItem>
                         <MDBNavItem center>
                             <MDBNavLink to="./Members">Members</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem center>
-                            <MDBBtn href="./Login" size="sm" >Login</MDBBtn>
+                            <MDBBtn href="./Login" size="sm">Login</MDBBtn>
                         </MDBNavItem>
 
                     </MDBNavbarNav>

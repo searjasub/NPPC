@@ -9,6 +9,7 @@ import ErrorPage from "./ErrorPage";
 import Login from "./Login";
 import Footer from "./Footer"
 import Members from "./Members";
+import Signup from "./Signup"
 
 class App extends Component {
 
@@ -37,6 +38,7 @@ class App extends Component {
                         <Route path="/Ranking" exact component={Ranking}/>
                         <Route path="/login" exact component={Login}/>
                         <Route path="/Members" exact component={Members}/>
+                        <Route path="/Signup" exact component={Signup}/>
                         <Route path="/" exact component={Home}/>
                         <Route path="/Error" component={ErrorPage}/>
                     </Switch>
