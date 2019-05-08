@@ -1,19 +1,36 @@
 import React, {Component} from 'react';
 import './App.css';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdbreact';
+import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
 import {withFirebase} from "./components/Firebase";
 
 
+const defaultState = {
+    email: "",
+    password: "",
+    name: ""
+};
+
 class Login extends Component {
 
+
+    constructor(props, context) {
+        super(props, context);
+        this.state = defaultState;
+    }
+
+    onChange(event){
+        console.log(event.target.value);
+        this.setState({[event.target.name]: event.target.value});
+    }
+
     render() {
+        const{email, password, name} = this.state;
         return (
             <>
-                <br/><br/><br/><br/>
-                <MDBContainer >
+                <MDBContainer>
                     <MDBRow className="w-responsive mx-auto p-3 mt-2">
                         <MDBCol>
-                            <MDBCard >
+                            <MDBCard>
                                 <div className=" pt-3 grey lighten-2">
                                     <MDBRow className="d-flex justify-content-start">
                                         <h3 className="deep-grey-text mt-3 mb-4 pb-1 mx-5">
@@ -22,11 +39,22 @@ class Login extends Component {
                                     </MDBRow>
                                 </div>
                                 <MDBCardBody className="mx-4 mt-4">
-                                    <MDBInput label="Your email" group type="text" validate />
+                                    <MDBInput label="Your email"
+                                              group
+                                              name="email"
+                                              type="text"
+                                              validate
+                                              value={email}
+                                              onChange={(event) => {this.onChange(event)}}/>
+                                    <MDBInput label="Your display name"
+                                              group
+                                              type="text"
+                                              validate value={name}/>
                                     <MDBInput
                                         label="Your password"
                                         group
                                         type="password"
+                                        value={password}
                                         validate
                                         containerClass="mb-0"
                                     />
@@ -62,7 +90,6 @@ class Login extends Component {
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
-                <br/><br/><br/><br/>
             </>
         );
     }
