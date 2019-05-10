@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
-import './App.css';
-import Ranking from "./Ranking";
+import '../App.css';
+import Ranking from "./Players/Ranking";
 import Information from "./Information";
 import {Route, Switch} from "react-router-dom";
 import Header from "./Header";
-import Home from "./Home";
+import Home from "./Home/Home";
 import ErrorPage from "./ErrorPage";
-import Login from "./Login";
+import Login from "./Authorization/Login";
 import Footer from "./Footer"
-import Members from "./Members";
-import Signup from "./Signup"
+import Members from "./Players/Members";
+import Signup from "./Temporal/Signup"
 
 class App extends Component {
 

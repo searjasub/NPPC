@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../../App.css';
 import {MDBBadge, MDBContainer, MDBListGroup, MDBListGroupItem} from "mdbreact";
 
 class Ranking extends Component {

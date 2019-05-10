@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../../App.css';
 import {MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBIcon, MDBRow} from "mdbreact";
 
 class Members extends Component {

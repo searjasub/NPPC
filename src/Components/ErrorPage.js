@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../App.css';
 
 class ErrorPage extends Component {
 
     render() {
         return (
             <>
-                ERROR
+                ERROR, You shouldn't be here
             </>
         );
     }

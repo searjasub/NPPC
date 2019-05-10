@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../../App.css';
 import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
-import {withFirebase} from "./components/Firebase";
-
+import {withFirebase} from "../Firebase/";
 
 const defaultState = {
     email: "",

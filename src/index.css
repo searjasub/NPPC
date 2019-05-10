@@ -14,7 +14,7 @@ code {
 }
 
 .bg {
-  background-image: url("home.jpg");
+  background-image: url("./Media/home.jpg");
   height: 40vh;
   background-position: center;
   background-repeat: no-repeat;
