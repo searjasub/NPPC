@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../App.css';
 import {
     MDBBtn,
     MDBCollapse,
@@ -31,25 +31,25 @@ class Header extends Component {
                 <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
                     <MDBNavbarNav right center>
                         <MDBNavItem center>
-                            <MDBBtn href="./Signup" size="sm">Tournament Sign Up</MDBBtn>
+                            <MDBBtn href="/Signup" size="sm">Tournament Sign Up</MDBBtn>
                         </MDBNavItem>
                         <MDBNavItem center>
-                            <MDBNavLink to="./">Home</MDBNavLink>
+                            <MDBNavLink to="/">Home</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem center>
-                            <MDBNavLink to="./Information">Information</MDBNavLink>
+                            <MDBNavLink to="/Information">Information</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem center>
                             <MDBNavbarNav>
-                                <MDBNavLink to="./Ranking">Ranking</MDBNavLink>
-                                <MDBNavLink to="./Ranking">Ranking</MDBNavLink>
+                                <MDBNavLink to="/Ranking">Ranking</MDBNavLink>
+                                {/*<MDBNavLink to="./Ranking">Ranking</MDBNavLink>*/}
                             </MDBNavbarNav>
                         </MDBNavItem>
                         <MDBNavItem center>
-                            <MDBNavLink to="./Members">Members</MDBNavLink>
+                            <MDBNavLink to="/Members">Members</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem center>
-                            <MDBBtn href="./Login" size="sm">Login</MDBBtn>
+                            <MDBBtn href="/Login" size="sm">Login</MDBBtn>
                         </MDBNavItem>
 
                     </MDBNavbarNav>

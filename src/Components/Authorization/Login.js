@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import '../../App.css';
 import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
 import {withFirebase} from "../Firebase/";
+import firebase from "firebase";
 
 const defaultState = {
-    email: "",
-    password: "",
-    name: ""
+    email: "slopez@student.neumont.edu",
+    password: "12345",
+    name: "Sear"
 };
 
 class Login extends Component {
@@ -15,6 +16,11 @@ class Login extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = defaultState;
+        this.createUser = this.createUser.bind(this);
+    }
+
+    createUser(email, password){
+        this.props.firebase.doCreateUserWithEmailAndPassword(email, password).then((error) => console.log(error)).catch((error) => console.log(error));
     }
 
     onChange(event){
@@ -47,15 +53,20 @@ class Login extends Component {
                                               onChange={(event) => {this.onChange(event)}}/>
                                     <MDBInput label="Your display name"
                                               group
+                                              name="name"
                                               type="text"
-                                              validate value={name}/>
+                                              validate
+                                              value={name}
+                                              onChange={(event) => {this.onChange(event)}}/>
                                     <MDBInput
                                         label="Your password"
                                         group
                                         type="password"
                                         value={password}
+                                        name="password"
                                         validate
                                         containerClass="mb-0"
+                                        onChange={(event) => {this.onChange(event)}}
                                     />
                                     <p className="font-small grey-text d-flex justify-content-end">
                                         Forgot
@@ -70,7 +81,7 @@ class Login extends Component {
                                         <MDBBtn
                                             color="danger"
                                             type="button"
-                                            className="btn-block z-depth-2"
+                                            onClick= {() => this.createUser(email, password)}
                                         >
                                             Log in
                                         </MDBBtn>

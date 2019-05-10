@@ -8,7 +8,7 @@ import './App.css'
 import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from "react-router-dom";
-import Firebase, {FirebaseContext} from './Components/Firebase/';
+import Firebase, {FirebaseContext} from './Components/Firebase';
 
 ReactDOM.render(
     <FirebaseContext.Provider value={new Firebase()}>
