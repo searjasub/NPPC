@@ -2,11 +2,10 @@ import React, {Component} from 'react';
 import '../../App.css';
 import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
 import {withFirebase} from "../Firebase/";
-import firebase from "firebase";
 
 const defaultState = {
     email: "slopez@student.neumont.edu",
-    password: "12345",
+    password: "Neumont2019",
     name: "Sear"
 };
 
@@ -19,17 +18,24 @@ class Login extends Component {
         this.createUser = this.createUser.bind(this);
     }
 
-    createUser(email, password){
-        this.props.firebase.doCreateUserWithEmailAndPassword(email, password).then((error) => console.log(error)).catch((error) => console.log(error));
+    createUser(email, password) {
+        this.props.firebase.doCreateUserWithEmailAndPassword(email, password)
+            .then((error) => {
+
+            })
+            .catch((error) => {
+                this.setState({error: error.message});
+                console.log(error)
+            });
     }
 
-    onChange(event){
+    onChange(event) {
         console.log(event.target.value);
         this.setState({[event.target.name]: event.target.value});
     }
 
     render() {
-        const{email, password, name} = this.state;
+        const {email, password, name} = this.state;
         return (
             <>
                 <MDBContainer>
@@ -50,14 +56,18 @@ class Login extends Component {
                                               type="text"
                                               validate
                                               value={email}
-                                              onChange={(event) => {this.onChange(event)}}/>
+                                              onChange={(event) => {
+                                                  this.onChange(event)
+                                              }}/>
                                     <MDBInput label="Your display name"
                                               group
                                               name="name"
                                               type="text"
                                               validate
                                               value={name}
-                                              onChange={(event) => {this.onChange(event)}}/>
+                                              onChange={(event) => {
+                                                  this.onChange(event)
+                                              }}/>
                                     <MDBInput
                                         label="Your password"
                                         group
@@ -66,7 +76,9 @@ class Login extends Component {
                                         name="password"
                                         validate
                                         containerClass="mb-0"
-                                        onChange={(event) => {this.onChange(event)}}
+                                        onChange={(event) => {
+                                            this.onChange(event)
+                                        }}
                                     />
                                     <p className="font-small grey-text d-flex justify-content-end">
                                         Forgot
@@ -77,11 +89,14 @@ class Login extends Component {
                                             Password?
                                         </a>
                                     </p>
-                                    <div className="text-center mb-4 mt-5">
+                                    <div className="text-danger">
+                                        {this.state.error}
+                                    </div>
+                                    <div className="text-center mb-4">
                                         <MDBBtn
                                             color="danger"
                                             type="button"
-                                            onClick= {() => this.createUser(email, password)}
+                                            onClick={() => this.createUser(email, password)}
                                         >
                                             Log in
                                         </MDBBtn>

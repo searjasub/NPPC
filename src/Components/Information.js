@@ -13,18 +13,20 @@ class Information extends Component {
     render() {
         return (
             <>
-                <br/>
+                {/*<a href="https://discord.gg/SFxsNDf">*/}
+                {/*</a>*/}
                 <p className="font-weight-bold">
                     Neumont Ping Pong Club
                 </p>
                 <br/>
                 <p className="text-weight-normal  mx-5">
-                    This website has been put together so people can see their current ranking on the On-Going Tournament
+                    This website has been put together so people can see their current ranking on the On-Going
+                    Tournament
 
                 </p>
             </>
-        );
+    );
     }
-}
+    }
 
-export default Information;
+    export default Information;
