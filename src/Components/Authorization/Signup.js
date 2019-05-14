@@ -4,24 +4,24 @@ import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} fr
 import {withFirebase} from "../Firebase/";
 
 const defaultState = {
-    email: "slopez@student.neumont.edu",
-    password: "Neumont2019"
+    email: "",
+    password: ""
 };
 
-class Login extends Component {
+class Signup extends Component {
 
 
     constructor(props, context) {
         super(props, context);
         this.state = defaultState;
-        this.loginUser = this.loginUser.bind(this);
+        this.createUser = this.createUser.bind(this);
     }
 
-    loginUser(email, password) {
-        this.props.firebase.doSignInWithEmailAndPassword(email, password)
+    createUser(email, password) {
+        this.props.firebase.doCreateUserWithEmailAndPassword(email, password)
             .then((response) => {
                 localStorage.setItem('userId', response.user.uid);
-                console.log(response.user)
+
             })
             .catch((error) => {
                 this.setState({error: error.message});
@@ -42,10 +42,10 @@ class Login extends Component {
                     <MDBRow className="w-responsive mx-auto p-3 mt-2">
                         <MDBCol>
                             <MDBCard>
-                                <div className=" pt-3 grey lighten-2">
+                                <div className=" p-3 grey lighten-2">
                                     <MDBRow className="d-flex justify-content-start">
                                         <h3 className="deep-grey-text mt-3 mb-4 pb-1 mx-5">
-                                            Log in
+                                           Sign up
                                         </h3>
                                     </MDBRow>
                                 </div>
@@ -71,15 +71,6 @@ class Login extends Component {
                                             this.onChange(event)
                                         }}
                                     />
-                                    <p className="font-small grey-text d-flex justify-content-end">
-                                        Forgot
-                                        <a
-                                            href="#!"
-                                            className="dark-grey-text font-weight-bold ml-1"
-                                        >
-                                            Password?
-                                        </a>
-                                    </p>
                                     <div className="text-danger">
                                         {this.state.error}
                                     </div>
@@ -87,20 +78,11 @@ class Login extends Component {
                                         <MDBBtn
                                             color="danger"
                                             type="button"
-                                            onClick={() => this.loginUser(email, password)}
-                                        >
-                                            Log in
-                                        </MDBBtn>
-                                    </div>
-                                    <p className="font-small grey-text d-flex justify-content-center">
-                                        Don't have an account?
-                                        <a
-                                            href="/signup"
-                                            className="dark-grey-text font-weight-bold ml-1"
+                                            onClick={() => this.createUser(email, password)}
                                         >
                                             Sign up
-                                        </a>
-                                    </p>
+                                        </MDBBtn>
+                                    </div>
                                 </MDBCardBody>
                             </MDBCard>
                         </MDBCol>
@@ -111,4 +93,4 @@ class Login extends Component {
     }
 }
 
-export default withFirebase(Login);
+export default withFirebase(Signup);

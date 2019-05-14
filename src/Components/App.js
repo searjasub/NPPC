@@ -7,9 +7,11 @@ import Header from "./Header";
 import Home from "./Home/Home";
 import ErrorPage from "./ErrorPage";
 import Login from "./Authorization/Login";
-import Footer from "./Footer"
+import Footer from "./Footer";
 import Members from "./Players/Members";
-import Signup from "./Temporal/Signup"
+import Signup from "./Authorization/Signup";
+import TournamentSignup from "./Temporal/TournamentSignup";
+import ForgotPass from "./Authorization/ForgotPass";
 
 class App extends Component {
 
@@ -38,7 +40,9 @@ class App extends Component {
                         <Route path="/Ranking" exact component={Ranking}/>
                         <Route path="/login" exact component={Login}/>
                         <Route path="/Members" exact component={Members}/>
-                        <Route path="/Signup" exact component={Signup}/>
+                        <Route path="/tournament" exact component={TournamentSignup}/>
+                        <Route path="/signup" exact component={Signup}/>
+                        <Route path="/forgot" exact component={ForgotPass}/>
                         <Route path="/" exact component={Home}/>
                         <Route path="/Error" component={ErrorPage}/>
                     </Switch>

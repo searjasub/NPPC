@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../../index.css'
 
-class Signup extends Component {
+class TournamentSignup extends Component {
 
     render() {
         return (
@@ -21,4 +21,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default TournamentSignup;
