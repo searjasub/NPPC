@@ -42,7 +42,8 @@ class App extends Component {
                     <Switch>
                         <Route path="/Information" component={Information}/>
                         <Route path="/Ranking" exact component={Ranking}/>
-                        <Route path="/login" exact render={<Login newErrorMessage={this.newErrorMessage}/>}/>
+                        {/*<Route path="/login" exact render={<Login newErrorMessage={this.newErrorMessage}/>}/>*/}
+                        <Route path="/login" exact component={Login}/>
                         <Route path="/Members" exact component={Members}/>
                         <Route path="/tournament" exact component={TournamentSignup}/>
                         <Route path="/signup" exact component={Signup}/>
