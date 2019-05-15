@@ -21,13 +21,17 @@ class App extends Component {
             'count': 0,
             'more': 'variable'
         };
-
+        this.newErrorMessage = this.newErrorMessage.bind(this);
         this.addToCount = this.addToCount.bind(this);
         console.log(this.state);
     }
 
     addToCount() {
         this.setState({'count': this.state.count + 1});
+    }
+
+    newErrorMessage(message) {
+        console.log(message);
     }
 
     render() {
@@ -38,7 +42,7 @@ class App extends Component {
                     <Switch>
                         <Route path="/Information" component={Information}/>
                         <Route path="/Ranking" exact component={Ranking}/>
-                        <Route path="/login" exact component={Login}/>
+                        <Route path="/login" exact render={<Login newErrorMessage={this.newErrorMessage}/>}/>
                         <Route path="/Members" exact component={Members}/>
                         <Route path="/tournament" exact component={TournamentSignup}/>
                         <Route path="/signup" exact component={Signup}/>

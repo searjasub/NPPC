@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../App.css';
+import { Link } from 'react-router-dom'
 import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
 import {withFirebase} from "../Firebase/";
 
@@ -25,8 +26,10 @@ class Login extends Component {
             })
             .catch((error) => {
                 this.setState({error: error.message});
+                this.props.newErrorMessage(error.message);
                 console.log(error)
             });
+
     }
 
     onChange(event) {
@@ -73,12 +76,12 @@ class Login extends Component {
                                     />
                                     <p className="font-small grey-text d-flex justify-content-end">
                                         Forgot
-                                        <a
-                                            href="#!"
+                                        <Link
+                                            to="/forgot"
                                             className="dark-grey-text font-weight-bold ml-1"
-                                        >
+                                         >
                                             Password?
-                                        </a>
+                                        </Link>
                                     </p>
                                     <div className="text-danger">
                                         {this.state.error}

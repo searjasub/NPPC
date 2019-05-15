@@ -4,7 +4,7 @@ import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} fr
 import {withFirebase} from "../Firebase/";
 
 const defaultState = {
-    email: "slopez@student.neumont.edu",
+    email: "",
     loading: false,
     sent: false
 };
@@ -13,12 +13,12 @@ const CardHeader = () => {
 
     return (
         <div className=" pt-3 grey lighten-2">
-        <MDBRow className="d-flex justify-content-start">
-            <h3 className="deep-grey-text mt-3 mb-4 pb-1 mx-5">
-                Forgot Password
-            </h3>
-        </MDBRow>
-    </div>
+            <MDBRow className="d-flex justify-content-start">
+                <h3 className="deep-grey-text mt-3 mb-4 pb-1 mx-5">
+                    Forgot Password
+                </h3>
+            </MDBRow>
+        </div>
     );
 };
 
@@ -46,7 +46,7 @@ const ForgotPasswordForm = ({email, loading, error, onChange, forgotPassword}) =
                     type="button"
                     onClick={() => forgotPassword(email)}
                 >
-                    Send New Password
+                    Send Password Reset Link
                 </MDBBtn>
             </div>
         </MDBCardBody>
@@ -90,8 +90,10 @@ class ForgotPass extends Component {
                         <MDBCol>
                             <MDBCard>
                                 <CardHeader/>
-
-                                { !sent ?
+                                <div className="mx-4 mt-4">
+                                    Enter your account email address to receive a link to reset your password.
+                                </div>
+                                {!sent ?
                                     <ForgotPasswordForm
                                         email={email}
                                         loading={loading}

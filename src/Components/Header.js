@@ -52,7 +52,7 @@ class Header extends Component {
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick={this.toggleCollapse}/>
                 <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-                    <MDBNavbarNav right center>
+                    <MDBNavbarNav right >
                         <MDBNavItem center>
                             <MDBBtn href="/tournament" size="sm">Tournament Sign Up</MDBBtn>
                         </MDBNavItem>
