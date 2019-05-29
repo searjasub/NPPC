@@ -12,6 +12,7 @@ import Members from "./Players/Members";
 import Signup from "./Authorization/Signup";
 import TournamentSignup from "./Temporal/TournamentSignup";
 import ForgotPass from "./Authorization/ForgotPass";
+import sessionProvider from "./Session";
 
 class App extends Component {
 
@@ -35,6 +36,7 @@ class App extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="App">
                 <Header/>
@@ -58,4 +60,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default sessionProvider(App);

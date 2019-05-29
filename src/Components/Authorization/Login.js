@@ -3,6 +3,7 @@ import '../../App.css';
 import { Link } from 'react-router-dom'
 import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
 import {withFirebase} from "../Firebase/";
+import {withSession} from "../Session";
 
 const defaultState = {
     email: "slopez@student.neumont.edu",
@@ -21,7 +22,9 @@ class Login extends Component {
     loginUser(email, password) {
         this.props.firebase.doSignInWithEmailAndPassword(email, password)
             .then((response) => {
-                localStorage.setItem('userId', response.user.uid);
+                this.props.session.setState({user: {name: email}});
+                localStorage.setItem('userId', email);
+                // localStorage.setItem('userId', response.user.uid);
                 console.log(response.user)
             })
             .catch((error) => {
@@ -112,4 +115,4 @@ class Login extends Component {
     }
 }
 
-export default withFirebase(Login);
+export default withSession(withFirebase(Login));
