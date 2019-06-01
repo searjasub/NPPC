@@ -21,7 +21,7 @@ class Signup extends Component {
         this.props.firebase.doCreateUserWithEmailAndPassword(email, password)
             .then((response) => {
                 localStorage.setItem('userId', response.user.uid);
-
+                this.props.session.setState({user: response.user});
             })
             .catch((error) => {
                 this.setState({error: error.message});

@@ -1,4 +1,4 @@
-import app from 'firebase/app';
+import app from 'firebase';
 import 'firebase/database';
 
 const config = {
@@ -15,31 +15,31 @@ class Firebase {
         console.log(config);
         app.initializeApp(config);
 
-        // this.auth = app.auth();
+        this.auth = app.auth();
         this.db = app.database();
 
     }
 
     // *** Auth API ***
-    
+
     doCreateUserWithEmailAndPassword = (email, password) =>
-        console.log("temp"); //this.auth.createUserWithEmailAndPassword(email, password);
-    
+        this.auth.createUserWithEmailAndPassword(email, password);
+
     doSignInWithEmailAndPassword = (email, password) =>
-        console.log("temp"); //this.auth.signInWithEmailAndPassword(email, password);
-    
+        this.auth.signInWithEmailAndPassword(email, password);
+
     doSignOut = () =>
-        console.log("temp"); //this.auth.signOut();
-    
+        this.auth.signOut();
+
     doPasswordReset = email =>
-        console.log("temp"); //this.auth.sendPasswordResetEmail(email);
-    
+        this.auth.sendPasswordResetEmail(email);
+
     doPasswordUpdate = password =>
-        console.log("temp"); //this.auth.currentUser.updatePassword(password);
-    
+        this.auth.currentUser.updatePassword(password);
+
     deleteUser = () =>
-        console.log("temp"); //this.auth.currentUser.delete();
-    
+        this.auth.currentUser.delete();
+
     adamLog = () => {
         return this.doSignInWithEmailAndPassword("adam@fake.account", "123456");
     };

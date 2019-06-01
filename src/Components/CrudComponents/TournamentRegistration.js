@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../../App.css';
 import {withFirebase} from "../Firebase";
+import {withSession} from "../Session";
 
 class TournamentRegistration extends Component {
 
@@ -31,6 +32,14 @@ class TournamentRegistration extends Component {
 
     render() {
         const {name} = this.state;
+        const {session} = this.props;
+        if(!session.state.user){
+            return (
+                <div>
+                    "Not logged in"
+                </div>
+            )
+        }
         return (
             <>
                 <div>
@@ -50,4 +59,4 @@ class TournamentRegistration extends Component {
     }
 }
 
-export default withFirebase(TournamentRegistration);
+export default withSession(TournamentRegistration);

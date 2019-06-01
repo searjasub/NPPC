@@ -22,10 +22,8 @@ class Login extends Component {
     loginUser(email, password) {
         this.props.firebase.doSignInWithEmailAndPassword(email, password)
             .then((response) => {
-                this.props.session.setState({user: {name: email}});
                 localStorage.setItem('userId', email);
-                // localStorage.setItem('userId', response.user.uid);
-                console.log(response.user)
+                this.props.session.setState({user: response.user});
             })
             .catch((error) => {
                 this.setState({error: error.message});

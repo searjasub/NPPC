@@ -50,8 +50,7 @@ const AuthTag = ({user, onLogout}) => {
     } else {
         return (
             <MDBNavItem center>
-                <MDBNavLink to="/Login" size="sm"
-                to='/login'>Login</MDBNavLink>
+                <MDBBtn to="/Login" size="sm" color="green">Login</MDBBtn>
             </MDBNavItem>
         )
     }
@@ -64,6 +63,8 @@ class Header extends Component {
     constructor(props, context, onLogout) {
         super(props, context);
         this.onLogout = this.onLogout.bind(this);
+
+        this.state = {firebase: this.props.firebase};
     }
 
     state = {
@@ -74,18 +75,14 @@ class Header extends Component {
         this.setState({isOpen: !this.state.isOpen});
     };
 
-    onLogout = () => {
-        this.props.session.setState({user: null});
-        localStorage.removeItem('userId');
+    onLogout = (firebase) => {
+        this.state.firebase.doSignOut();
         // redirect right here
-
     };
 
     render() {
 
         const {user} = this.props.session.state;
-
-        console.log(localStorage.getItem('userId'));
 
         return (
             <header>
@@ -121,7 +118,6 @@ class Header extends Component {
                         </div>
                     </div>
                 </nav>
-
 
                 <div  class="view" className="imagen">
                 </div>
