@@ -26,7 +26,6 @@ class TournamentList extends Component {
                 this.setState({
                     playerList: playerList.val()
                 });
-                console.log(playerList.val());
             },
             (error)=>{
                 console.log(error);
@@ -36,8 +35,6 @@ class TournamentList extends Component {
 
     render() {
         const {playerList} = this.state;
-        console.log(playerList);
-        console.log( Object.keys(playerList));
         return (
             <>
                 <div>

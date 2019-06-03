@@ -24,7 +24,6 @@ class App extends Component {
         };
         this.newErrorMessage = this.newErrorMessage.bind(this);
         this.addToCount = this.addToCount.bind(this);
-        console.log(this.state);
     }
 
     addToCount() {
@@ -36,7 +35,6 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="App">
                 <Header/>

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../App.css';
 import {MDBBtn, MDBCollapse, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBNavItem, MDBNavLink} from "mdbreact";
 import {withSession} from "./Session";
+import {withFirebase} from "./Firebase";
 const CustomHeader = (isLoggedIn) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark scrolling-navbar">
@@ -39,18 +40,19 @@ const CustomHeader = (isLoggedIn) => {
 };
 
 const AuthTag = ({user, onLogout}) => {
-    console.log(user);
     if (user) {
         return (
             <MDBNavItem center>
-                <MDBBtn to="/Login" color="red" size="sm"
-                onClick={onLogout}>Logout</MDBBtn>
+                <MDBNavLink to="/Login" size="sm"
+                onClick={onLogout}>Logout</MDBNavLink>
             </MDBNavItem>
         )
     } else {
         return (
             <MDBNavItem center>
-                <MDBBtn to="/Login" size="sm" color="green">Login</MDBBtn>
+                <MDBNavLink to="/Login" size="sm">
+                    Login
+                </MDBNavLink>
             </MDBNavItem>
         )
     }
@@ -58,13 +60,9 @@ const AuthTag = ({user, onLogout}) => {
 };
 
 class Header extends Component {
-
-
     constructor(props, context, onLogout) {
         super(props, context);
         this.onLogout = this.onLogout.bind(this);
-
-        this.state = {firebase: this.props.firebase};
     }
 
     state = {
@@ -75,8 +73,8 @@ class Header extends Component {
         this.setState({isOpen: !this.state.isOpen});
     };
 
-    onLogout = (firebase) => {
-        this.state.firebase.doSignOut();
+    onLogout = () => {
+        this.props.firebase.doSignOut();
         // redirect right here
     };
 
@@ -126,4 +124,4 @@ class Header extends Component {
     }
 }
 
-export default withSession(Header);
+export default withFirebase(withSession(Header));

@@ -25,6 +25,7 @@ const SessionProvider = Component => {
                         //         { user: mergedData || authUser || null });
                         // })
                     } else {
+                        this.setState({user: null});
                         // this.setState(this.state.firstLoad ?
                         //     { user: authUser || null, loading: false, firstLoad: false } :
                         //     { user: authUser || null });
@@ -33,7 +34,6 @@ const SessionProvider = Component => {
         }
 
         render() {
-            console.log(this);
             return (
                 <SessionContext.Provider value={this}>
                     <Component {...this.props} session={this}/>
