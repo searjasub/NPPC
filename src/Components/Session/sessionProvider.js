@@ -18,6 +18,7 @@ const SessionProvider = Component => {
                 authUser => {
                     if(authUser){
                         this.setState({user: authUser});
+                        console.log(authUser);
                         // this.props.firebase.user(authUser.uid).once('value', SNAPSHOT => {
                         //     mergedData = {...authUser, ...SNAPSHOT.val()};
                         //     this.setState(this.state.firstLoad ?

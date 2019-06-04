@@ -2,11 +2,18 @@ import React, {Component} from 'react';
 import '../../App.css';
 import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
 import {withFirebase} from "../Firebase/";
+import {withSession} from "../Session";
 
 const defaultState = {
     email: "",
     password: ""
 };
+
+function validEmail(email) {
+    let regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@neumont\.edu$/g;
+    let regexstudent = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@student.neumont\.edu$/g;
+    return regex.test(email) || regexstudent.test(email);
+}
 
 class Signup extends Component {
 
@@ -18,15 +25,33 @@ class Signup extends Component {
     }
 
     createUser(email, password) {
-        this.props.firebase.doCreateUserWithEmailAndPassword(email, password)
-            .then((response) => {
-                localStorage.setItem('userId', response.user.uid);
-                this.props.session.setState({user: response.user});
-            })
-            .catch((error) => {
-                this.setState({error: error.message});
-                console.log(error)
-            });
+        const {firebase} = this.props;
+        if(validEmail(email)) {
+            firebase.doCreateUserWithEmailAndPassword(email, password)
+                .then((response) => {
+                    const {user} = response;
+                    this.props.session.setState({user});
+                    // Add the user to the database
+
+                    // take the provider uid and put it in our database
+                    let player = {
+                        "username": email,
+                        "stats": {
+                            "wins": 0,
+                            "loses": 0,
+                            "points": 1200
+                        },
+                        "challengers": []
+                    };
+
+                    firebase.user(user.uid).set(player);
+                })
+                .catch((error) => {
+                    this.setState({error: error.message});
+                    console.log(error)
+                });
+
+        }
     }
 
     onChange(event) {
@@ -45,7 +70,7 @@ class Signup extends Component {
                                 <div className=" p-3 grey lighten-2">
                                     <MDBRow className="d-flex justify-content-start">
                                         <h3 className="deep-grey-text mt-3 mb-4 pb-1 mx-5">
-                                           Sign up
+                                            Sign up
                                         </h3>
                                     </MDBRow>
                                 </div>
@@ -78,6 +103,7 @@ class Signup extends Component {
                                         <MDBBtn
                                             color="danger"
                                             type="button"
+                                            disabled={!validEmail(email)}
                                             onClick={() => this.createUser(email, password)}
                                         >
                                             Sign up
@@ -93,4 +119,4 @@ class Signup extends Component {
     }
 }
 
-export default withFirebase(Signup);
+export default withFirebase(withSession(Signup));

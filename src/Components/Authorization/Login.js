@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../../App.css';
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
 import {withFirebase} from "../Firebase/";
 import {withSession} from "../Session";
@@ -19,11 +19,12 @@ class Login extends Component {
         this.loginUser = this.loginUser.bind(this);
     }
 
-    loginUser(email, password) {
-        this.props.firebase.doSignInWithEmailAndPassword(email, password)
+    loginUser(email, password, name) {
+        const {firebase} = this.props;
+        firebase.doSignInWithEmailAndPassword(email, password)
             .then((response) => {
-                localStorage.setItem('userId', email);
-                this.props.session.setState({user: response.user});
+                const {user} = response;
+                this.props.session.setState({user: user});
             })
             .catch((error) => {
                 this.setState({error: error.message});
@@ -78,7 +79,7 @@ class Login extends Component {
                                         <Link
                                             to="/forgot"
                                             className="dark-grey-text font-weight-bold ml-1"
-                                         >
+                                        >
                                             Password?
                                         </Link>
                                     </p>

@@ -54,10 +54,12 @@ class Firebase {
     
     // *** user API ***
     
-    user = uid => this.db.ref(`users/${uid}`);
+    user = uid => this.db.ref(`player-list/${uid}`);
     
-    users = () => this.db.ref('users');
-    
+    users = () => this.db.ref('player-list');
+
+
+
     author = authorId => this.db.ref(`authorList/${authorId}`);
     
     authors = () => this.db.ref('authorList');
